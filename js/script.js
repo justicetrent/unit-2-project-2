@@ -11,11 +11,13 @@ const namesPerPage = 10;
 const showPage = (list, page) => {       // I created an arrow function with the parameters of ('list', 'page') which coincide with my global variables.  
    let startIndex = (page * namesPerPage) - namesPerPage; // this variable ensures that the student list starts with an index of [0], meaning the first student in the list. 
    let endIndex = page * namesPerPage;                   // this piece of code ensures that on any given page that there will be no more than 10 students per page. 
-      
-   if (i >= startIndex && i < endIndex) { 
+   
+   for (let i=0; i < list.length; i += 1) {  
+      if ( i >= startIndex && i < endIndex) { 
          list[i].style.display = 'block'; // this code will show the 10 list items on the page.
       }else {
          list[i].style.display = 'none'; // this code will hide the remaining names in the list that are not apart of the 10 that will be shown on the page. 
+         }
       }
    }
 
